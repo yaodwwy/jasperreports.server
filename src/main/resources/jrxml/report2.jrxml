@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb5b3300-1dec-4f49-852c-3bde793b4fb1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="student_id" class="java.lang.String"/>
+	<parameter name="ranking" class="java.lang.Integer"/>
+	<parameter name="score_math" class="java.lang.Integer"/>
+	<parameter name="score_chinese" class="java.lang.Integer"/>
+	<parameter name="score_english" class="java.lang.Integer"/>
+	<parameter name="score_chemistry" class="java.lang.Integer"/>
+	<parameter name="score_physical" class="java.lang.Integer"/>
+	<parameter name="score_biology" class="java.lang.Integer"/>
+	<parameter name="score_top" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="total" class="java.lang.Integer">
+		<variableExpression><![CDATA[$P{score_math}+$P{score_chinese}+$P{score_english}+$P{score_chemistry}+$P{score_physical}+$P{score_biology}]]></variableExpression>
+	</variable>
+	<variable name="average" class="java.lang.Float">
+		<variableExpression><![CDATA[($P{score_math}.floatValue()+$P{score_chinese}.floatValue()+$P{score_english}.floatValue()+$P{score_chemistry}.floatValue()+$P{score_physical}.floatValue()+$P{score_biology}.floatValue())/6]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="10" width="559" height="60" forecolor="#A61E1C" backcolor="#E86B68" uuid="571b647c-c0c3-4133-b8a5-f3dbc34f26c4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="19"/>
+				</textElement>
+				<text><![CDATA[询价列表2]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="222" y="10" width="100" height="20" uuid="2999225f-7530-42fa-8cc2-2cacdbe8cdd1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="7" width="68" height="32" uuid="c0240cf1-84c7-4197-b32e-dc59cbb77c66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="19"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="10" width="100" height="30" uuid="146ca4d2-8db7-4b85-92a6-a062dd6fa2e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="19"/>
+				</textElement>
+				<text><![CDATA[语文]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="57" width="100" height="30" uuid="dc906036-fb4b-4a80-b6cc-b55529aef5da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="19"/>
+				</textElement>
+				<text><![CDATA[数学]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="7" width="68" height="32" uuid="933bd011-3c97-4a70-ac8c-435e0746b6c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="19"/>
+				</textElement>
+				<text><![CDATA[总分]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="58" width="100" height="30" uuid="5b2cb3cb-c64d-49c5-821c-05e4646b192d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="10" width="100" height="30" uuid="e4427061-46c8-433e-9ad9-ca70396b2bf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{score_chinese}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="57" width="100" height="30" uuid="921d447d-e82a-4d1b-ab80-c609e5aaa058"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{score_math}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="50" width="110" height="30" uuid="2171ef1a-ed24-4b02-acd8-eb7b910ce7ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

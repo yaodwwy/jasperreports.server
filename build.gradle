@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.springsource.org/plugins-release" }
+    }
+
+    dependencies {
+        classpath(
+                "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
+                "io.spring.gradle:propdeps-plugin:${springGradleVersion}"
+        )
+    }
+}
+
+apply plugin: 'java'
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    mavenCentral()
+}
+dependencies {
+    compile(
+            "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-web-services:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}",
+            "org.postgresql:postgresql:${postgresqlVersion}",
+    )
+
+    compile("net.sf.jasperreports:jasperreports:${jasperreportsVersion}") {
+        exclude group: 'com.lowagie'
+        exclude group: 'org.olap4j'
+    }
+    compile("org.olap4j:olap4j:${olap4jVersion}",
+            "com.lowagie:itext:${itextVersion}")
+    compile ("org.springframework:spring-context-support:4+")
+
+}
