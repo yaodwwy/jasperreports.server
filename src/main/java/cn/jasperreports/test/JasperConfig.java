@@ -13,6 +13,7 @@ public class JasperConfig extends WebMvcConfigurerAdapter {
     private final static String REPORT_DATA_KEY = "datasource";
     private final static String PATH_KEY = "classpath:jrxml/";
     private final static String TYPE_KEY = ".jrxml";
+    //通配视图名称 必须包含此名称的jrxml文件才被解析 以上同理
     private final static String VIEW_KEY = "report";
 
     @Override
@@ -26,7 +27,7 @@ public class JasperConfig extends WebMvcConfigurerAdapter {
         resolver.setPrefix(PATH_KEY);
         resolver.setSuffix(TYPE_KEY);
         resolver.setReportDataKey(REPORT_DATA_KEY);
-        resolver.setViewNames("*" + VIEW_KEY + "*"); //视图名称，模板名称需要符合 *你定义的key* 如*Report*
+        resolver.setViewNames("*" + VIEW_KEY + "*");
         resolver.setViewClass(JasperReportsMultiFormatView.class);
         resolver.setOrder(1);
         return resolver;

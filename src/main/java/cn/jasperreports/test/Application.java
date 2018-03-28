@@ -22,8 +22,14 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
     }
+
     /**
-     * 直接使用模板文件中的sql语句得到报表
+     *
+     * @param modelMap 存放jrDataSource的容器
+     * @param reportName  对应jrxml文件名
+     * @param format    目前仅测试了pdf
+     * @param response
+     * @return
      */
     @GetMapping("/{reportName}")
     public ModelAndView getReportByParam(final ModelMap modelMap,
@@ -31,17 +37,9 @@ public class Application {
                                          @RequestParam(FILE_FORMAT) final String format, HttpServletResponse response) {
         Collection itemsMap = new ArrayList();
         Map<String, Object> map = new HashMap();
-//        map.put("name", "张山");
-//        map.put("student_id", "2017121108");
-//        map.put("ranking", 10);
-//        map.put("score_math", 97);
-//        map.put("score_chinese", 100);
-//        map.put("score_english", 78);
-//        map.put("score_chemistry", 70);
-//        map.put("score_physical", 89);
-//        map.put("score_biology", 99);
-//        map.put("score_top", 88);
-        map.put("id",1);
+        map.put("name", "张山");
+        map.put("student_id", "2017121108");
+        map.put("ranking", 10);
         map.put("first_name","Chloe");
         map.put("last_name","Brian");
         map.put("reportName",reportName);
