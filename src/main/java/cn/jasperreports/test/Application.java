@@ -1,7 +1,9 @@
 package cn.jasperreports.test;
 
 import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRJpaDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
+import net.sf.jasperreports.engine.data.JsonDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.ModelMap;
@@ -46,7 +48,6 @@ public class Application {
         itemsMap.add(map);
 
         response.setContentType("text/html;charset=UTF-8");
-
         JRDataSource jrDataSource = new JRMapCollectionDataSource(itemsMap);
         modelMap.put(DATASOURCE, jrDataSource);
         modelMap.put(FILE_FORMAT, format);

@@ -14,10 +14,14 @@
 			<staticText>
 				<reportElement x="200" y="20" width="200" height="30" uuid="8ba9b0a3-6ae7-4463-83ec-a97fbdedd848"/>
 				<textElement>
-					<font size="22"/>
+					<font fontName="华文宋体" size="22"/>
 				</textElement>
 				<text><![CDATA[询价单测试0328]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="be0a2d60-3280-4218-85cd-78b8a78d53ee"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
@@ -29,11 +33,17 @@
 	<detail>
 		<band height="125" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="30" width="100" height="30" uuid="83eab9f4-902c-42f5-970d-74d9cb61e450"/>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="10" y="30" width="100" height="30" uuid="83eab9f4-902c-42f5-970d-74d9cb61e450"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
 				<text><![CDATA[姓名：]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="110" y="30" width="100" height="30" uuid="7f90fd21-b6e1-4d62-867c-013ad24e6396"/>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ElementGroupHeight" x="110" y="30" width="100" height="30" uuid="7f90fd21-b6e1-4d62-867c-013ad24e6396"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
 			</textField>
 		</band>
