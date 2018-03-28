@@ -1,4 +1,4 @@
-package cn.jasperreports.test;
+package cn.jasperreports.reports;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,7 +6,6 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver;
-import org.springframework.web.servlet.view.jasperreports.JasperReportsXlsxView;
 
 @Configuration
 public class JasperConfig extends WebMvcConfigurerAdapter {
@@ -16,11 +15,6 @@ public class JasperConfig extends WebMvcConfigurerAdapter {
     private final static String TYPE_KEY = ".jrxml";
     //通配视图名称 必须包含此名称的jrxml文件才被解析 以上同理
     private final static String VIEW_KEY = "*report*";
-
-    @Override
-    public void configureDefaultServletHandling(final DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
 
     @Bean
     public JasperReportsViewResolver getJasperReportsViewResolver(){

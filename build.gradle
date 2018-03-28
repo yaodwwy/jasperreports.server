@@ -21,9 +21,12 @@ dependencies {
     compile(
             "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
             "org.springframework.boot:spring-boot-starter-web-services:${springBootVersion}",
-//            "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}",
-            "org.postgresql:postgresql:${postgresqlVersion}",
+            "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}",
+//            "org.postgresql:postgresql:${postgresqlVersion}",
     )
+    compile group: 'com.h2database', name: 'h2', version: '1+'
+
 
     compile("net.sf.jasperreports:jasperreports:${jasperreportsVersion}") {
         exclude group: 'com.lowagie'
