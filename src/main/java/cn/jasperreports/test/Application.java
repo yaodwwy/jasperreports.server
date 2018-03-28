@@ -1,9 +1,7 @@
 package cn.jasperreports.test;
 
 import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.data.JRJpaDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
-import net.sf.jasperreports.engine.data.JsonDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.ModelMap;
@@ -11,7 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/jasper")
@@ -22,14 +25,13 @@ public class Application {
     private static final String DATASOURCE = "datasource";
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(Application.class, args);
     }
 
     /**
-     *
-     * @param modelMap 存放jrDataSource的容器
-     * @param reportName  对应jrxml文件名
-     * @param format    目前仅测试了pdf
+     * @param modelMap   存放jrDataSource的容器
+     * @param reportName 对应jrxml文件名
+     * @param format     目前仅测试了pdf
      * @param response
      * @return
      */
@@ -42,11 +44,10 @@ public class Application {
         map.put("name", "张山");
         map.put("student_id", "2017121108");
         map.put("ranking", 10);
-        map.put("first_name","Chloe");
-        map.put("last_name","Brian");
-        map.put("reportName",reportName);
+        map.put("first_name", "Chloe");
+        map.put("last_name", "Brian");
+        map.put("reportName", reportName);
         itemsMap.add(map);
-
         response.setContentType("text/html;charset=UTF-8");
         JRDataSource jrDataSource = new JRMapCollectionDataSource(itemsMap);
         modelMap.put(DATASOURCE, jrDataSource);

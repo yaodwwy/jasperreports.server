@@ -3,9 +3,14 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inquiry" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2ac5071-189f-4a5c-88f4-19ca95f6aa51">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="name" class="java.lang.String"/>
+	<parameter name="first_name" class="java.lang.String"/>
+	<parameter name="last_name" class="java.lang.String"/>
+	<parameter name="reportName" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<variable name="count" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -25,27 +30,68 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="278" height="30" uuid="62b657a0-0bd2-4e8f-9fec-99a8e0f80ca3"/>
+				<textFieldExpression><![CDATA[$P{reportName}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement x="278" y="0" width="277" height="30" uuid="386aaaa5-f616-4d07-83da-cc0db76e4b49"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="65" splitType="Stretch">
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="10" y="30" width="100" height="30" uuid="83eab9f4-902c-42f5-970d-74d9cb61e450"/>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="0" width="100" height="30" uuid="83eab9f4-902c-42f5-970d-74d9cb61e450"/>
 				<textElement>
 					<font fontName="华文宋体"/>
 				</textElement>
 				<text><![CDATA[姓名：]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ElementGroupHeight" x="110" y="30" width="100" height="30" uuid="7f90fd21-b6e1-4d62-867c-013ad24e6396"/>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ElementGroupHeight" x="105" y="0" width="100" height="30" uuid="7f90fd21-b6e1-4d62-867c-013ad24e6396"/>
 				<textElement>
 					<font fontName="华文宋体"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="245" y="0" width="100" height="30" uuid="cf22873b-55f4-4bcc-bcb6-3fabe72401a7"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{first_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="210" y="0" width="30" height="30" uuid="5d4bde38-8882-4b58-b5cb-971fb58dbe90"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[A：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="0" width="100" height="30" uuid="d88dc6b2-d730-44ad-b3a3-d07aa817995d"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{last_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="350" y="0" width="30" height="30" uuid="d514d982-36d7-46dd-a8db-a51ccf1ce6e0"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[B：]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
