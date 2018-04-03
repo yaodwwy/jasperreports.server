@@ -1,13 +1,11 @@
-package cn.jasperreports.reports.service.impl;
+package cn.adbyte.jasperreports.service.impl;
 
-import cn.jasperreports.reports.entity.MemberEntity;
-import cn.jasperreports.reports.repository.MemberRepository;
-import cn.jasperreports.reports.service.IJasperService;
-import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
+import cn.adbyte.jasperreports.service.IJasperService;
+import cn.adbyte.jasperreports.entity.MemberEntity;
+import cn.adbyte.jasperreports.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.Serializable;
 import java.util.*;
 
 @Service

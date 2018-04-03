@@ -1,6 +1,6 @@
-package cn.jasperreports.reports.service;
+package cn.adbyte.jasperreports.service;
 
-import cn.jasperreports.reports.entity.MemberEntity;
+import cn.adbyte.jasperreports.entity.MemberEntity;
 
 import java.util.List;
 

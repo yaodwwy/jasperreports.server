@@ -1,4 +1,4 @@
-package cn.jasperreports.reports.entity;
+package cn.adbyte.jasperreports.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

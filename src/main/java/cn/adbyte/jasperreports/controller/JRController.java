@@ -1,7 +1,7 @@
-package cn.jasperreports.reports.controller;
+package cn.adbyte.jasperreports.controller;
 
-import cn.jasperreports.reports.entity.MemberEntity;
-import cn.jasperreports.reports.service.IJasperService;
+import cn.adbyte.jasperreports.service.IJasperService;
+import cn.adbyte.jasperreports.entity.MemberEntity;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

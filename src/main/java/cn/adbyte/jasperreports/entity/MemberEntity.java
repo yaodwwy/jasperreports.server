@@ -1,4 +1,4 @@
-package cn.jasperreports.reports.entity;
+package cn.adbyte.jasperreports.entity;
 
 import org.springframework.cache.annotation.Cacheable;
 

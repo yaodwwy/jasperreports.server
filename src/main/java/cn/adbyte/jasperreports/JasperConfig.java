@@ -1,4 +1,4 @@
-package cn.jasperreports.reports;
+package cn.adbyte.jasperreports;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

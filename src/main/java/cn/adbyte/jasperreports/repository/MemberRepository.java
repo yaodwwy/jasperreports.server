@@ -1,6 +1,6 @@
-package cn.jasperreports.reports.repository;
+package cn.adbyte.jasperreports.repository;
 
-import cn.jasperreports.reports.entity.MemberEntity;
+import cn.adbyte.jasperreports.entity.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
