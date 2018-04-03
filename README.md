@@ -9,4 +9,5 @@
 
 ```
 http://localhost:8080/jasper/pdf/member_report
+http://localhost:8080/jasper/xlsx/member_report
 ```

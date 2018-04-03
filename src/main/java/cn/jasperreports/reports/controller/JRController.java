@@ -16,7 +16,6 @@ import java.util.List;
 @RequestMapping("/jasper")
 public class JRController {
 
-    private static final String REPORT_NAME = "reportName";
     private static final String FILE_FORMAT = "format";
     private static final String DATASOURCE = "datasource";
 
@@ -29,8 +28,11 @@ public class JRController {
      * @param reportName 对应jrxml文件名
      * @return
      */
-    @GetMapping("/pdf/{reportName}")
-    public String getReports(final ModelMap modelMap,@PathVariable(REPORT_NAME) final String reportName) {
+
+    @GetMapping("/{type}/{reportName}")
+    public String getReports(final ModelMap modelMap,
+                             @PathVariable("type") final String type,
+                             @PathVariable("reportName") final String reportName) {
         //为了有测试数据先初始化一部分
         List<MemberEntity> save = iJasperService.save();
 
@@ -40,7 +42,7 @@ public class JRController {
         JRBeanCollectionDataSource jrBeanCollectionDataSource = new JRBeanCollectionDataSource(reportsData);
         //写入请求作用域
         modelMap.put(DATASOURCE, jrBeanCollectionDataSource);
-        modelMap.put(FILE_FORMAT, "pdf");
+        modelMap.put(FILE_FORMAT, type);
         return reportName;
     }
 }
