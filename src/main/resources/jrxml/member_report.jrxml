@@ -12,6 +12,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="name" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select * from t_member]]>
 	</queryString>
@@ -21,11 +22,11 @@
 	<field name="username" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="username"/>
 	</field>
-	<field name="password" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="password"/>
-	</field>
 	<field name="name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="password" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="password"/>
 	</field>
 	<field name="phone" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="phone"/>
@@ -63,6 +64,31 @@
 			<staticText>
 				<reportElement x="439" y="0" width="31" height="23" uuid="ff46a464-69eb-4c44-96f4-f2ec3fbef4b2"/>
 				<text><![CDATA[页码：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="2" width="73" height="18" uuid="495e64bd-7cad-45ed-8ec1-e3ec8f270092"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="2" width="60" height="18" uuid="a8983781-5ced-4799-8843-ecaada2f6351"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[姓名xxx：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="23" width="60" height="18" uuid="f93468fa-6f6d-4eaa-9547-6391a7f492f6"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="60" height="18" uuid="66e06a4b-7f5f-45a8-b06f-902ca59f96fb"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[姓名3：]]></text>
 			</staticText>
 		</band>
 	</title>

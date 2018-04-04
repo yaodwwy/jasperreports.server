@@ -16,8 +16,9 @@ public class JasperConfig extends WebMvcConfigurerAdapter {
     public JasperReportsViewResolver getJasperReportsViewResolver(){
         JasperReportsViewResolver resolver = new JasperReportsViewResolver();
         resolver.setReportDataKey(REPORT_DATA_KEY);
+        resolver.setCache(false);//测试时关闭缓存
         resolver.setPrefix("classpath:jrxml/");
-        resolver.setSuffix(".jasper");
+        resolver.setSuffix(".jrxml");
         resolver.setViewNames("*report*");
         //通配视图名称 必须包含此名称的jasper文件才被解析 以上同理
         resolver.setViewClass(JasperReportsMultiFormatView.class);

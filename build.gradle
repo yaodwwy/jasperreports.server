@@ -22,7 +22,7 @@ dependencies {
     compile(
             "org.apache.poi:poi:${poiVersion}",
             "com.h2database:h2:${h2dbiVersion}",
-            "org.activiti:activiti-spring-boot-starter-basic:${activitiVersion}",
+//            "org.activiti:activiti-spring-boot-starter-basic:${activitiVersion}",
             "org.springframework:spring-context-support:4+",
             "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
             "org.springframework.boot:spring-boot-starter-web-services:${springBootVersion}",
